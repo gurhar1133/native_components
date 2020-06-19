@@ -10,7 +10,7 @@
         <tabContentItem>
             <stackLayout  class="relative">
                 <label text="Instructions" class="text-center text-xl bg-blue-100 text-blue-600 py-2 px-2" />
-                    <listView items="{instructions}" >
+                    <listView class="h-full" items="{instructions}" >
 								<Template let:item>
 									<label class="text-center" text="{item.name}" textWrap="true" />
 								</Template>
