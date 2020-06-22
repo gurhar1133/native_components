@@ -1,16 +1,20 @@
 <page>
-    <actionBar title="{message}" class="text-center bg-blue-200 text-blue-600 px-2 py-4"/>
-    <tabs tabsPosition="bottom">
-        <tabStrip>
-						<tabStripItem title="Instructions"/>
-						<tabStripItem title="Your components"/>
+    <actionBar title="{message}" class="text-center bg-green-500 text-white px-2 py-4"/>
+    <tabs iOSTabBarItemsAlignment="centerSelected" tabsPosition="bottom">
+        <tabStrip highlightColor="#fff" selectedItemColor="#fff" class="bg-green-500 text-white" >
+						<tabStripItem title="instructions">
+                            <image src="font://&#xf015;" class="fas t-36" />
+                        </tabStripItem>
+						<tabStripItem title="Your components">
+                            <image src="font://&#xf085;" class="fas fa-cogs" />
+						</tabStripItem>
 						
 	    </tabStrip>
 
         <tabContentItem>
             <stackLayout  class="relative">
-                <label text="Instructions" class="text-center text-xl bg-blue-100 text-blue-600 py-2 px-2" />
-                    <listView class="h-full" items="{instructions}" >
+                <label text="Instructions" class="text-center text-xl bg-green-500 text-white py-2 px-2" />
+                    <listView class="h-full"  items="{instructions}" >
 								<Template let:item>
 									<label class="text-center" text="{item.name}" textWrap="true" />
 								</Template>
@@ -19,20 +23,23 @@
         </tabContentItem>
 
         <tabContentItem>
-        
+        <scrollView>
         <stackLayout>
-            <label text="Buttons" class="text-center text-xl bg-blue-100 text-blue-600  py-2 px-2 m-b-4" />
+            <label text="Buttons" class="text-center text-xl bg-green-500 text-white  py-2 px-2 m-b-4" />
                
                     <!--
                         Buttons go here
                     -->
-                    <!-- 
-                <Button 
+                    
+                <!-- <Button 
                     btnText="Large Primary"
                     color="primary"
                     size="xl"
                     elevation="sm"
-                /> -->
+                    on:tap={()=>{
+                        console.log("tap tap");
+                    }}
+                />  -->
 
             <!-- Buttons can have different levels of elevation -->
 
@@ -48,15 +55,23 @@
 
                 <!-- <Button
                     btnText="Rounded"
-                    rounded={true} /> -->
+                    rounded={true} />  
 
-                <!-- <Button 
+                <Button 
                     btnText="Outline"
-                    outline={true} /> -->
+                    outline={true}
+                    elevation={"none"} />
 
-                <!-- <Button 
+                    <Button 
+                        btnText="Outline"
+                        outline={true}
+                        elevation={"none"}
+                        color="primary" />
+
+                 <Button 
                     btnText="Text Button"
-                    textMode={true} /> -->
+                    textMode={true} 
+                    elevation={"none"}/>  -->
 
             <!-- by default disabled is false. Buttons should be disableable-->
  
@@ -76,7 +91,7 @@
                         iconData={comment}/> -->
                     
                    
-            <label text="Cards" class="text-center text-xl bg-blue-100 text-blue-600  py-2 px-2 my-4"  />
+            <label text="Cards" class="text-center text-xl bg-green-500 text-white  py-2 px-2 my-4"  />
                 <!--
                         Cards go here
                 -->
@@ -138,9 +153,75 @@
                                 >
         
                             </Card> -->
-           
-        </stackLayout>
+           <label text="Overlays" class="text-center text-xl bg-green-500 text-white  py-2 px-2 m-b-4" />
+                <stackLayout class="h-64 w-full bg-green-200">
+                    <!-- <Button 
+                            btnText="Show Overlay"
+                            color="primary"
+                            size="xl"
+                            elevation="sm"
+                            on:tap={()=>{overlay1 = !overlay1}}
+                            /> 
+
+
+                    <Overlay absolute="{true}" 
+                            opacity="{.5}" 
+                            zIndex="{99}" 
+                            value="{overlay1}" 
+                        > 
+                            <Button 
+                            btnText="Hide Overlay"
+                            color="primary"
+                            size="xl"
+                            elevation="sm"
+                            on:tap={()=>{overlay1 = !overlay1}}
+                            />  
+
+
+                            </Overlay>
+                        
+                        -->
+                
+                </stackLayout>
+                
+
+
+                        <!-- <Button 
+                            btnText="Show overlay"
+                            color="primary"
+                            size="xl"
+                            elevation="sm"
+                            on:tap={()=>{overlay2 = !overlay2}}
+                        /> 
+ 
+
+                <Overlay absolute="{false}" 
+                        opacity="{.2}" 
+                        zIndex="{99}" 
+                    value="{overlay2}"
+                     >
+
+      
         
+                <Button 
+                    btnText="Hide Overlay"
+                    color="primary"
+                    size="xl"
+                    elevation="sm"
+                    on:tap={()=>{overlay2 = !overlay2}}
+                /> 
+
+            </Overlay> -->
+
+            <label text="Textfields" class="text-center text-xl bg-green-500 text-white  py-2 px-2 m-b-4" />
+                <!-- A see Vuetify examples for this basic text input -->
+
+                <!-- <Textfield placeHolder="Default text input" />
+                <Textfield placeHolder="Filled" filled={true} />
+                <Textfield placeHolder="Oulined" outlined={true} /> -->
+        
+        </stackLayout>
+        </scrollView>
         </tabContentItem>
 
     </tabs>
@@ -149,17 +230,21 @@
 
 <script>
     import { Template } from 'svelte-native/components';
+    import Button from "./Button.svelte";
     let message = "Svelte-Native Components Practice!";
     let label;
     let instructions = [
         {name: "1) Make components"},
         {name: "2) Refer to Veutify for the components design"},
-        {name: "3) Dont alter App.svelte. (Other than uncommenting components)"},
+        {name: "3) Other than the tabstrip and uncommenting components, dont alter App.svelte. "},
         {name: "4) See repo for instructions for icons"},
         {name: "5) Use tailwind, see repo for instructions"},
-        {name: "6) Contact me with any issues"}
+        {name: "6) Tabstrip instructions: Visit this link \nhttps://icons8.com/articles/ui-inspiration-tab-bar-animations/ \n to get inspiration to customize the tabstrip as you like (dont have to obsess over super fancy animation. Something nice and simple will suffice)."},
+        {name: "7) Contact me with any issues"}
     ];
 
+    let overlay1 = false;
+    let overlay2 = false;
     
 </script>
 
@@ -171,3 +256,4 @@
   
     
 </style>
+
