@@ -245,7 +245,9 @@
     let page;
     let overlay1 = false;
     let overlay2 = false;
-    
+    function loaded(args){
+        page = args.object;
+    }
 </script>
 
 <style>
