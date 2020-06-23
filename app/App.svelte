@@ -242,7 +242,7 @@
         {name: "6) Tabstrip instructions: Visit this link \nhttps://icons8.com/articles/ui-inspiration-tab-bar-animations/ \n to get inspiration to customize the tabstrip as you like (dont have to obsess over super fancy animation. Something nice and simple will suffice)."},
         {name: "7) Contact me with any issues"}
     ];
-
+    let page;
     let overlay1 = false;
     let overlay2 = false;
     
