@@ -236,7 +236,7 @@
     let instructions = [
         {name: "1) Make components"},
         {name: "2) Refer to Veutify for the components design"},
-        {name: "3) Other than the tabstrip and uncommenting/importing components, dont alter App.svelte. "},
+        {name: "3) Other than the tabstrip and uncommenting/importing components or adding an on:loaded function to page, dont alter App.svelte. "},
         {name: "4) See repo for instructions for icons"},
         {name: "5) Use tailwind, see repo for instructions"},
         {name: "6) Tabstrip instructions: Visit this link \nhttps://icons8.com/articles/ui-inspiration-tab-bar-animations/ \n to get inspiration to customize the tabstrip as you like (dont have to obsess over super fancy animation. Something nice and simple will suffice)."},
