@@ -1,4 +1,4 @@
-# Instructions
+# Instructions (currently under maintainance)
 
 
 To enable nativescript tailwind (if you havent yet):
