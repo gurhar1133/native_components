@@ -1,4 +1,37 @@
+<script>
+    import { Template } from 'svelte-native/components';
+    import { onMount } from 'svelte';
+    import Button from "./Button.svelte";
+    
+    let message = "Svelte-Native Components Practice!";
+    let label;
+    let instructions = [
+        {name: "1) Make components"},
+        {name: "2) Refer to Veutify for the components design"},
+        {name: "3) For this project (but not the web version), it is ok to alter App.svelte if you need to, just dont alter component calls "},
+        {name: "4) See repo for instructions for icons"},
+        {name: "5) Use tailwind, or vanilla css, whatever works"},
+        {name: "6) Tabstrip instructions: Visit this link \nhttps://icons8.com/articles/ui-inspiration-tab-bar-animations/ \n to get inspiration to customize the tabstrip as you like (dont have to obsess over super fancy animation. Something nice and simple will suffice)."},
+        {name: "7) Contact me with any issues"}
+    ];
+
+    let overlay1 = false;
+    let overlay2 = false;
+    
+</script>
+
+<style>
+   
+    
+  
+  
+  
+    
+</style>
+
+
 <page>
+  
     <actionBar title="{message}" class="text-center bg-green-500 text-white px-2 py-4"/>
     <tabs iOSTabBarItemsAlignment="centerSelected" tabsPosition="bottom">
         <tabStrip highlightColor="#fff" selectedItemColor="#fff" class="bg-green-500 text-white" >
@@ -23,8 +56,10 @@
         </tabContentItem>
 
         <tabContentItem>
+       
         <scrollView>
         <stackLayout>
+        
             <label text="Buttons" class="text-center text-xl bg-green-500 text-white  py-2 px-2 m-b-4" />
                
                     <!--
@@ -32,6 +67,7 @@
                     -->
                     
                 <!-- <Button 
+                    
                     btnText="Large Primary"
                     color="primary"
                     size="xl"
@@ -44,6 +80,7 @@
             <!-- Buttons can have different levels of elevation -->
 
                 <!-- <Button 
+                   
                     btnText="Block Secondary Raised High"
                     color="secondary"
                     size="block"
@@ -54,21 +91,26 @@
                         default size is md-->
 
                 <!-- <Button
+                    
                     btnText="Rounded"
+                    size="lg"
                     rounded={true} />  
 
                 <Button 
+                    
                     btnText="Outline"
                     outline={true}
                     elevation={"none"} />
 
                     <Button 
+                       
                         btnText="Outline"
                         outline={true}
                         elevation={"none"}
                         color="primary" />
 
-                 <Button 
+                <Button 
+                    
                     btnText="Text Button"
                     textMode={true} 
                     elevation={"none"}/>  -->
@@ -76,16 +118,17 @@
             <!-- by default disabled is false. Buttons should be disableable-->
  
                 <!-- <Button
+                    
                     btnText="Disabled"
                     disabled={true} /> -->
 
-                <!-- put an icon in this button. No btnText-->
+                <!-- put font awesome comment icon in this button. No btnText-->
 
                 <!-- <Button fab={true} 
                         elevation="lg"
-                        iconString="f075"/> -->
+                        iconString="f075"/>
 
-                <!-- <Button fab={true} 
+                <Button fab={true} 
                         elevation="sm"
                         size="lg"
                         iconString="f075"/> -->
@@ -96,6 +139,7 @@
                         Cards go here
                 -->
                 <!-- <Card title="Vegeta"
+                        platform="{platform}"
                         subtitle="Prince of Sayans"
                         description="Lorem ipsum ....."
                         hasImage={true}
@@ -106,6 +150,7 @@
                     </Card> -->
 
                 <!-- <Card title="Svelte"
+                        platform="{platform}"
                         subtitle="Javascript Framework"
                         description="Lorem ipsum ....."
                         hasImage={true}
@@ -118,17 +163,19 @@
                 <!-- nesting Button in Card -->
 
                 <!-- <Card title="Card with buttons"
+                            platform="{platform}"
                          subtitle="No Image"
                         >
 
                         <Button fab={true} 
                             elevation="lg"
-                            iconString="f075"/>
+                            iconData={comment}/>
 
                     </Card> -->
  
  
                     <!-- <Card title="Tailwind"
+                            platform="{platform}"
                             subtitle="Design"
                             description="Lorem ipsum ....."
                             hasImage={true}
@@ -144,6 +191,7 @@
                 Doesnt have to fit the vuetify design pattern. Could be animation, styling, etc-->  
 
                     <!-- <Card title="Bonus"
+                                platform="{platform}"
                                 subtitle="Your own bonus property"
                                 description="Lorem ipsum ....."
                                 hasImage={true}
@@ -153,9 +201,11 @@
                                 >
         
                             </Card> -->
+            
            <label text="Overlays" class="text-center text-xl bg-green-500 text-white  py-2 px-2 m-b-4" />
                 <stackLayout class="h-64 w-full bg-green-200">
                     <!-- <Button 
+                            platform="{platform}"
                             btnText="Show Overlay"
                             color="primary"
                             size="xl"
@@ -165,11 +215,13 @@
 
 
                     <Overlay absolute="{true}" 
+                            platform="{platform}"
                             opacity="{.5}" 
                             zIndex="{99}" 
                             value="{overlay1}" 
                         > 
                             <Button 
+                            platform="{platform}"
                             btnText="Hide Overlay"
                             color="primary"
                             size="xl"
@@ -187,6 +239,7 @@
 
 
                         <!-- <Button 
+                            platform="{platform}"
                             btnText="Show overlay"
                             color="primary"
                             size="xl"
@@ -196,6 +249,7 @@
  
 
                 <Overlay absolute="{false}" 
+                        platform="{platform}"
                         opacity="{.2}" 
                         zIndex="{99}" 
                     value="{overlay2}"
@@ -204,6 +258,7 @@
       
         
                 <Button 
+                    platform="{platform}"
                     btnText="Hide Overlay"
                     color="primary"
                     size="xl"
@@ -216,46 +271,15 @@
             <label text="Textfields" class="text-center text-xl bg-green-500 text-white  py-2 px-2 m-b-4" />
                 <!-- A see Vuetify examples for this basic text input -->
 
-                <!-- <Textfield placeHolder="Default text input" />
-                <Textfield placeHolder="Filled" filled={true} />
-                <Textfield placeHolder="Oulined" outlined={true} /> -->
+                <!-- <Textfield platform="{platform}" placeHolder="Default text input" />
+                <Textfield platform="{platform}" placeHolder="Filled" filled={true} />
+                <Textfield platform="{platform}" placeHolder="Oulined" outlined={true} /> -->
         
         </stackLayout>
         </scrollView>
+        
         </tabContentItem>
 
     </tabs>
 
 </page>
-
-<script>
-    import { Template } from 'svelte-native/components';
-    import Button from "./Button.svelte";
-    let message = "Svelte-Native Components Practice!";
-    let label;
-    let instructions = [
-        {name: "1) Make components"},
-        {name: "2) Refer to Veutify for the components design"},
-        {name: "3) Other than the tabstrip and uncommenting/importing components or adding an on:loaded function to page, dont alter App.svelte. "},
-        {name: "4) See repo for instructions for icons"},
-        {name: "5) Use tailwind, see repo for instructions"},
-        {name: "6) Tabstrip instructions: Visit this link \nhttps://icons8.com/articles/ui-inspiration-tab-bar-animations/ \n to get inspiration to customize the tabstrip as you like (dont have to obsess over super fancy animation. Something nice and simple will suffice)."},
-        {name: "7) Contact me with any issues"}
-    ];
-    let page;
-    let overlay1 = false;
-    let overlay2 = false;
-    function loaded(args){
-        page = args.object;
-    }
-</script>
-
-<style>
-   
-    
-  
-  
-  
-    
-</style>
-
