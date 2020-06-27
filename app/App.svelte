@@ -143,7 +143,7 @@
                         subtitle="Prince of Sayans"
                         description="Lorem ipsum ....."
                         hasImage={true}
-                        imgSrc="https://qph.fs.quoracdn.net/main-qimg-40ccab97c4b182082c3525bb34575a37.webp"
+                        imgSrc="https://i.redd.it/1xlrjb24x4f41.jpg"
                         elevation="lg"
                     >
         
