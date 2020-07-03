@@ -11,7 +11,7 @@
         {name: "3) For this project (but not the web version), it is ok to alter App.svelte if you need to, just dont alter component calls "},
         {name: "4) See repo for instructions for icons"},
         {name: "5) Use tailwind, or vanilla css, whatever works"},
-        {name: "6) Tabstrip instructions: Visit this link \nhttps://icons8.com/articles/ui-inspiration-tab-bar-animations/ \n to get inspiration to customize the tabstrip as you like (dont have to obsess over super fancy animation. Something nice and simple will suffice)."},
+        {name: "6) Tabstrip instructions: Visit this link \nhttps://icons8.com/articles/ui-inspiration-tab-bar-animations/ \n to get inspiration to customize the tabstrip as you like (dont have to obsess over super fancy animation. Something nice and simple will suffice). Hint: rather than updating the current tabDtrip you may want to use gridLayout and to fix an element to the bottom of the screen"},
         {name: "7) Contact me with any issues"}
     ];
 
