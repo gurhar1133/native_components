@@ -1,7 +1,7 @@
 <script>
     import { Template } from 'svelte-native/components';
     import { onMount } from 'svelte';
-    import Button from "./Button.svelte";
+    
     
     let message = "Svelte-Native Components Practice!";
     let label;
