@@ -17,6 +17,58 @@
 
     let overlay1 = false;
     let overlay2 = false;
+
+    $: gridItems = [
+      {
+        type: "Card", props: {
+          title: "Card Test", 
+          subtitle: "Test", 
+          description: "Lorem ipsum blah blah blah",
+          hasImage: true,
+          imgSrc: "https://www.pngkey.com/png/detail/767-7671067_minecraft-pixel-art-grid.png",
+          shaped: true
+         
+        }
+        
+      },
+      {
+        type: "Card", props:{
+          title: "Card Test2", 
+          subtitle: "Test", 
+          description: "Lorem ipsum blah blah blah",
+          hasImage: true,
+          imgSrc: "https://www.lysergic.net/wp-content/uploads/2017/07/figure_grid_dimple_dylan_bakker-750x1000.jpg",
+          shaped: true
+         }
+        
+      },
+      {
+        type: "Card", 
+        props: {
+          title: "Card Test3", 
+          subtitle: "Test", 
+          description: "Lorem ipsum blah blah blah",
+          hasImage: true,
+          imgSrc: "https://images.artistrunwebsite.com/arwblog/bg_37311453262250.jpg?1453262251",
+          shaped: true
+        }
+        
+      },
+      {
+        markup: "<h3 class='text-xl' style='color:red;'>Hello World</h3>"
+      },
+      {
+        type: "Button",
+        props: {
+          btnText: "Click me!",
+          elevation: "lg",
+          rounded: true,
+          textMode: true
+        }
+        
+      }
+      
+    ];
     
 </script>
 
@@ -274,6 +326,21 @@
                 <!-- <Textfield platform="{platform}" placeHolder="Default text input" />
                 <Textfield platform="{platform}" placeHolder="Filled" filled={true} />
                 <Textfield platform="{platform}" placeHolder="Oulined" outlined={true} /> -->
+
+            <label text="Grids" class="text-center text-xl bg-green-500 text-white  py-2 px-2 m-b-4" />
+             <!-- This builds on the gridLayout component -->
+             <label text="Default two column" class="text-center bg-green-500 text-white  py-2 px-2 m-b-4" />
+            
+                <!-- <Grid gridElements={gridItems} /> -->
+
+            <label text="One column" class="text-center bg-green-500 text-white  py-2 px-2 m-b-4" />
+            
+                <!-- <Grid gridElements={gridItems} numCols={1}/> -->
+
+            <label text="Three column" class="text-center bg-green-500 text-white  py-2 px-2 m-b-4" />
+            
+
+                <!-- <Grid gridElements={gridItems} numCols={3}/> -->
         
         </stackLayout>
         </scrollView>
