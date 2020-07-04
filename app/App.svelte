@@ -18,6 +18,22 @@
     let overlay1 = false;
     let overlay2 = false;
 
+    // You can render the nested button in 
+    //  the non absolute overlay, or you can 
+    //  render a component with the data from 
+    //  overlayData right below, your choice. 
+    //  Try both out if you want extra practice.
+    let overlayData = {
+        type: "Card", props:{
+          title: "Card Test2", 
+          subtitle: "Test", 
+          description: "Lorem ipsum blah blah blah",
+          hasImage: true,
+          imgSrc: "https://www.lysergic.net/wp-content/uploads/2017/07/figure_grid_dimple_dylan_bakker-750x1000.jpg",
+          shaped: true
+         }
+    }
+
     $: gridItems = [
       {
         type: "Card", props: {
@@ -287,7 +303,10 @@
                         -->
                 
                 </stackLayout>
-                
+                <!-- You can render the nested button in 
+                    the non absolute overlay, or you can 
+                    render a component with the data from 
+                    overlayData, your choice.-->
 
 
                         <!-- <Button 
